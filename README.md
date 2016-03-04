@@ -8,5 +8,5 @@ This is a centralized OAuth2 provider integrated with LDAP
 
 ## Build Instructions
 
-$ mvn package docker:build
-$ docker push catalystdevlabs/camp-oauth2-ldap [Optional]
+$ mvn package docker:build  
+$ docker push catalystdevlabs/camp-oauth2-ldap [Optional]  
