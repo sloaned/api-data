@@ -1,0 +1,11 @@
+before_script:
+  - docker info
+  - docker login -e philario@catalystdevworks.com -u catalystdevlabs -p q1w2e3r4t5
+
+build:
+  script:
+    - mvn clean package docker:build
+    - docker push catalystdevworks/camp-oauth2-ldap
+  tags:
+    - docker
+    - shell

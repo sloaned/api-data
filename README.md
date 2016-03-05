@@ -6,7 +6,19 @@ The CAMP is a collection of micorservice applications which serve as a core plat
 
 This is a centralized OAuth2 provider integrated with LDAP
 
-## Build Instructions
+## Build Steps
 
-$ mvn package docker:build  
+### Automated Build
+
+This repository is configured to automatically build on check-in.  
+See .gitlab-ci.yml file for automated build steps.
+
+### Local Build
+
+$ mvn clean package docker:build  
 $ docker push catalystdevlabs/camp-oauth2-ldap [Optional]  
+
+
+
+
+
