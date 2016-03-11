@@ -8,5 +8,5 @@ build:
     - mvn clean package docker:build
     - docker push catalystdevworks/camp-oauth2-ldap
   tags:
-    - multi
+    - docker
     - aws
