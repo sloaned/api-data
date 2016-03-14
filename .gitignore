@@ -1,6 +1,11 @@
 # Compiled Code #
 *.class
 **/target/**
+*.classpath
+*.project
+*.settings
+*.springBeans
+
 
 # Package Files #
 *.jar
