@@ -1,10 +1,6 @@
-# Catalyst Application Module Platform
+# Team Assessment API
 
-The CAMP is a collection of micorservice applications which serve as a core platform for internal Catalyst web apps. 
-
-## camp-oauth2-ldap
-
-This is a centralized OAuth2 provider integrated with LDAP
+This RESTful API provides the business logic and services required for the Team Assessment application.
 
 ## Build Steps
 
