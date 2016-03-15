@@ -19,6 +19,5 @@ public interface UserRepository extends MongoRepository<User, String> {
     @RestResource(exported = false)
     void delete(User user);
 
-    public User findByFirstName(String firstName);
     public List<User> findByLastName(String lastName);
 }

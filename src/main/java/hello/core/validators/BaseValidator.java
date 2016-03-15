@@ -1,6 +1,8 @@
 package hello.core.validators;
 
+import hello.modules.User.User;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 /**
@@ -21,11 +23,12 @@ public class BaseValidator implements Validator {
 
     @Override
     public boolean supports(Class<?> aClass) {
-        return false;
+        return User.class.equals(aClass);
     }
 
     @Override
     public void validate(Object o, Errors errors) {
+        ValidationUtils.rejectIfEmpty(errors, "username", "name.empty");
 
     }
 }

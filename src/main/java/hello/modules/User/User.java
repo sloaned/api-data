@@ -1,34 +1,38 @@
 package hello.modules.User;
 
+import hello.core.utilities.RegexConstants;
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.hateoas.ResourceSupport;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by gfisher on 3/14/2016.
  */
-@Document
 public class User extends ResourceSupport {
 
     @Id
     private String id;
 
-    @NotNull
+    @NotNull(message = "Username is required")
+    @Pattern(regexp = RegexConstants.USERNAME)
     private String username;
 
-    @NotNull
+    @NotNull(message = "Password is required")
+    @Pattern(regexp = RegexConstants.PASSWORD)
     private String password;
 
-    @NotNull
+    @NotEmpty(message = "First Name is required")
     private String firstName;
 
-    @NotNull
+    @NotEmpty(message = "Last Name is required")
     private String lastName;
 
-    @Email
+    @NotEmpty(message = "Email is required")
+    @Email(message = "Email must be valid")
     private String email;
 
     public String getUsername() {

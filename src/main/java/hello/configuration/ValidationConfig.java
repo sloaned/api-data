@@ -1,10 +1,12 @@
 package hello.configuration;
 
-import hello.core.validators.UserValidator;
-import hello.modules.User.User;
+import com.mongodb.Mongo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.validation.Validator;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+import org.springframework.data.mongodb.core.mapping.event.ValidatingMongoEventListener;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 /**
  * Created by gfisher on 3/14/2016.
@@ -13,7 +15,12 @@ import org.springframework.validation.Validator;
 public class ValidationConfig {
 
     @Bean
-    public Validator<User> beforeSaveUserValidator() {
-        return new Validator<User>;
+    public ValidatingMongoEventListener validatingMongoEventListener() {
+        return new ValidatingMongoEventListener(validator());
+    }
+
+    @Bean
+    public LocalValidatorFactoryBean validator() {
+        return new LocalValidatorFactoryBean();
     }
 }

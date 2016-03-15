@@ -1,22 +1,25 @@
 package hello.modules.User;
 
+
 import hello.core.validators.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Validator;
+
 import java.util.List;
 
 /**
  * Created by gfisher on 3/14/2016.
  */
+
 @Service
 public class UserService {
-    @Autowired
-    private UserRepository repository;
+
 
     @Autowired
-    private UserValidator validator;
+    private Validator validator;
 
-    public List<User> getAllUsers() {
+    /*public List<User> getAllUsers() {
         return repository.findAll();
     }
 
@@ -44,5 +47,5 @@ public class UserService {
 
     public List<User> searchUserByLastName(String lastName) {
         return repository.findByLastName(lastName);
-    }
+    }*/
 }
