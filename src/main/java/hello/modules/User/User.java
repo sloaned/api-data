@@ -9,6 +9,7 @@ import org.springframework.hateoas.ResourceSupport;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+
 /**
  * Created by gfisher on 3/14/2016.
  */
@@ -17,13 +18,7 @@ public class User extends ResourceSupport {
     @Id
     private String id;
 
-    @NotNull(message = "Username is required")
-    @Pattern(regexp = RegexConstants.USERNAME)
-    private String username;
-
-    @NotNull(message = "Password is required")
-    @Pattern(regexp = RegexConstants.PASSWORD)
-    private String password;
+    private String version;
 
     @NotEmpty(message = "First Name is required")
     private String firstName;
@@ -34,6 +29,33 @@ public class User extends ResourceSupport {
     @NotEmpty(message = "Email is required")
     @Email(message = "Email must be valid")
     private String email;
+
+    @NotNull(message = "Username is required")
+    @Pattern(regexp = RegexConstants.USERNAME)
+    private String username;
+
+    @NotNull(message = "Password is required")
+    @Pattern(regexp = RegexConstants.PASSWORD)
+    private String password;
+
+
+//    TODO Add Image to User Entity
+    private String profileDescription;
+
+    private Boolean isActive;
+
+    public User() {}
+
+    public User(String version, String firstName, String lastName, String email, String username, String password, String profileDescription, Boolean isActive) {
+        this.version = version;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.profileDescription = profileDescription;
+        this.isActive = isActive;
+    }
 
     public String getUsername() {
         return username;
