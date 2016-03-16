@@ -5,6 +5,7 @@ import hello.modules.User.User;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Range;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * Created by gfisher on 3/16/2016.
@@ -29,6 +30,7 @@ public class Feedback {
 
     private String label;
 
+    @DBRef
     private Team teamId;
 
     public Feedback() {}

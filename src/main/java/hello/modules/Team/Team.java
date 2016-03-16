@@ -3,6 +3,7 @@ package hello.modules.Team;
 import hello.modules.Template.Template;
 import hello.modules.User.User;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.util.List;
 
@@ -22,8 +23,10 @@ public class Team {
 
     private Template template;
 
+    @DBRef
     private List<User> teamMembers;
 
+    @DBRef
     private List<User> teamLeads;
 
 // TODO: Add Image to Team Entity;
