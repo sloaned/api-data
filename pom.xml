@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.catalystdevworks</groupId>
-    <artifactId>team-assessment-api</artifactId>
+    <artifactId>team-assessment-data</artifactId>
     <version>0.1.0</version>
 
     <parent>
