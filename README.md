@@ -1,6 +1,5 @@
-# Team Assessment API
-
-This RESTful API provides the business logic and services required for the Team Assessment application.
+## Team Assessment Data
+This Catalyst DevLabs project is a data service for the Aperture Team Assessment application.
 
 ## Build Steps
 
@@ -12,7 +11,7 @@ See .gitlab-ci.yml file for automated build steps.
 ### Local Build
 
 $ mvn clean package docker:build  
-$ docker push catalystdevlabs/camp-oauth2-ldap [Optional]  
+$ docker push catalystdevlabs/team-assessment-data [Optional]
 
 
 
