@@ -3,10 +3,9 @@ before_script:
   - docker login -e philario@catalystdevworks.com -u catalystdevlabs -p q1w2e3r4t5
 
 build:
-  image: maven:3.3.3-jdk-8
   script:
     - mvn clean package docker:build
-    - docker push catalystdevworks/team-assessment-data
+    - docker push catalystdevlabs/aperture-data
   tags:
     - docker
     - aws
