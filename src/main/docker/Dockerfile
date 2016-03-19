@@ -1,4 +1,4 @@
-FROM brainsphere/centos7-java8:latest
+FROM catalystdevlabs/centos7-java8:latest
 MAINTAINER catalystdevlabs <philario@catalystdevworks.com>
 
 # Add Compiled Spring Boot Package
