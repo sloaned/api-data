@@ -17,33 +17,21 @@ public class BootstrapData implements CommandLineRunner {
     private UserRepository repository;
 
 
+    //TODO: Create a better way to seed the database, probably through the service layer. Remove this function when that works
+    /**
+     * This automatically deletes any data, then repopulates the database with 25 users.
+     * @param args
+     * @throws Exception
+     */
     @Override
     public void run(String... args) throws Exception {
 
         repository.deleteAll();
+        int initData = 25;
 
-        repository.save(new User("1", "Jack", "Bauer1", "email@email.com", "jbauer1", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer2", "email@email.com", "jbauer2", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer3", "email@email.com", "jbauer3", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer4", "email@email.com", "jbauer4", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer5", "email@email.com", "jbauer5", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer6", "email@email.com", "jbauer6", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer7", "email@email.com", "jbauer7", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer8", "email@email.com", "jbauer8", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer9", "email@email.com", "jbauer9", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer10", "email@email.com", "jbauer10", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer11", "email@email.com", "jbauer11", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer12", "email@email.com", "jbauer12", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer13", "email@email.com", "jbauer13", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer14", "email@email.com", "jbauer14", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer15", "email@email.com", "jbauer15", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer16", "email@email.com", "jbauer16", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer17", "email@email.com", "jbauer17", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer18", "email@email.com", "jbauer18", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer19", "email@email.com", "jbauer19", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer20", "email@email.com", "jbauer20", "Password1!", "description", true));
-        repository.save(new User("1", "Jack", "Bauer21", "email@email.com", "jbauer21", "Password1!", "description", true));
-
+        for(int i = 0; i < initData; i++) {
+            repository.save(new User("1", "Jack", "Bauer"+i, "email@email.com", "jbauer"+i, "Password!"+i, "description", true));
+        }
     }
 
 

@@ -13,6 +13,10 @@ See .gitlab-ci.yml file for automated build steps.
 $ mvn clean package docker:build  
 $ docker push catalystdevlabs/team-assessment-data [Optional]
 
+###Database Info
+
+Mongo is currently being used as our data storage. The database name is defined in MongoConfig.
+
 
 
 
