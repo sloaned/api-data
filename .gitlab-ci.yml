@@ -6,6 +6,8 @@ build:
   script:
     - mvn clean package docker:build
     - docker push catalystdevlabs/aperture-data
+  only:
+    - master
   tags:
     - docker
     - aws
