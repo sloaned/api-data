@@ -14,7 +14,7 @@
             </snapshots>
             <id>archiva.internal</id>
             <name>Archiva Managed Internal Repository</name>
-            <url>http://172.17.70.23:8090/repository/internal</url>
+            <url>http://172.17.70.23:8090/repository/devlabs-aa</url>
         </repository>
     </repositories>
 
@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>com.catalystdevworks</groupId>
-            <artifactId>team-assessment-entities</artifactId>
+            <artifactId>aperture-entities</artifactId>
             <version>0.1.0</version>
         </dependency>
 
