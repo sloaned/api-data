@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Test Endpoint Just for Testing Docker Image Builds
  */
 @SpringBootApplication
-@RestController
 public class Application {
 
     public static void main(String[] args) {
