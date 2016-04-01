@@ -1,7 +1,7 @@
 package assessment.configuration;
 
-import assessment.entities.User.User;
-import assessment.modules.User.UserRepository;
+import assessment.entities.user.User;
+import assessment.modules.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -29,9 +29,7 @@ public class BootstrapData implements CommandLineRunner {
         repository.deleteAll();
         int initData = 25;
 
-        for(int i = 0; i < initData; i++) {
-            repository.save(new User("1", "Jack", "Bauer"+i, "email@email.com", "jbauer"+i, "Password!"+i, "description", true));
-        }
+        
     }
 
 }
