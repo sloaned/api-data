@@ -1,6 +1,6 @@
-package assessment.modules.Membership;
+package assessment.modules.token;
 
-import assessment.entities.Membership.Membership;
+import assessment.entities.token.Token;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -9,9 +9,9 @@ import org.springframework.data.rest.core.annotation.RestResource;
  * Created by gfisher on 3/16/2016.
  */
 @RepositoryRestResource
-public interface MembershipRepository extends MongoRepository<Membership, String> {
+public interface TokenRepository extends MongoRepository<Token,String> {
 
     @Override
     @RestResource(exported = false)
-    void delete(Membership membership);
+    void delete(Token token);
 }

@@ -1,6 +1,6 @@
-package assessment.modules.Team;
+package assessment.modules.assessment;
 
-import assessment.entities.Team.Team;
+import assessment.entities.assessment.Assessment;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -9,9 +9,9 @@ import org.springframework.data.rest.core.annotation.RestResource;
  * Created by gfisher on 3/16/2016.
  */
 @RepositoryRestResource
-public interface TeamRepository extends MongoRepository<Team,String> {
+public interface TemplateRepository extends MongoRepository<Assessment, String> {
 
     @Override
     @RestResource(exported = false)
-    void delete(Team team);
+    void delete(Assessment template);
 }

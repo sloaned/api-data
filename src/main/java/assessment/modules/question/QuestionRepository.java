@@ -1,6 +1,6 @@
-package assessment.modules.Feedback;
+package assessment.modules.question;
 
-import assessment.entities.Feedback.Feedback;
+import assessment.entities.question.Question;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -9,9 +9,9 @@ import org.springframework.data.rest.core.annotation.RestResource;
  * Created by gfisher on 3/16/2016.
  */
 @RepositoryRestResource
-public interface FeedbackRepository extends MongoRepository<Feedback,String> {
+public interface QuestionRepository extends MongoRepository<Question,String> {
 
     @Override
     @RestResource(exported = false)
-    void delete(Feedback feedback);
+    void delete(Question question);
 }

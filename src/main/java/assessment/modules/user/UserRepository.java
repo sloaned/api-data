@@ -1,6 +1,6 @@
-package assessment.modules.User;
+package assessment.modules.user;
 
-import assessment.entities.User.User;
+import assessment.entities.user.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;

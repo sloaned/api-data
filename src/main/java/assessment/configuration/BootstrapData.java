@@ -1,7 +1,7 @@
 package assessment.configuration;
 
-import assessment.entities.User.User;
-import assessment.modules.User.UserRepository;
+import assessment.entities.user.User;
+import assessment.modules.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
