@@ -29,9 +29,7 @@ public class BootstrapData implements CommandLineRunner {
         repository.deleteAll();
         int initData = 25;
 
-        for(int i = 0; i < initData; i++) {
-            repository.save(new User("1", "Jack", "Bauer"+i, "email@email.com", "jbauer"+i, "Password!"+i, "description", true));
-        }
+        
     }
 
 }
