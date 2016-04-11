@@ -1,5 +1,6 @@
 package assessment.configuration;
 
+import assessment.entities.user.Role;
 import assessment.entities.user.User;
 import assessment.modules.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +26,35 @@ public class BootstrapData implements CommandLineRunner {
      */
     @Override
     public void run(String... args) throws Exception {
-
         repository.deleteAll();
         int initData = 25;
 
-        
+        User user = new User();
+
+        user.setVersion(1);
+        user.setActive(true);
+        user.setAvatar("avatar");
+        user.setEmail("test@test.com");
+        user.setFirstName("testFirstName");
+        user.setLastName("testLastName");
+        user.setRole(Role.DEVELOPER);
+        user.setProfileDescription("Test description");
+
+        User user2 = new User();
+
+        user2.setVersion(1);
+        user2.setActive(true);
+        user2.setAvatar("avatar2");
+        user2.setEmail("test2@test.com");
+        user2.setFirstName("testFirstNameTwo");
+        user2.setLastName("testLastNameTwo");
+        user2.setRole(Role.DEVELOPER);
+        user2.setProfileDescription("Test description2");
+
+
+        repository.save(user);
+        repository.save(user2);
+
     }
 
 }
