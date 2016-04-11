@@ -2,6 +2,7 @@ package assessment.modules.user;
 
 import assessment.entities.user.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -18,11 +19,4 @@ public interface UserRepository extends MongoRepository<User, String> {
     @Override
     @RestResource(exported = false)
     void delete(User user);
-
-    /**
-     * Provides an endpoint to search for Users by last name
-     * @param lastName The last name of a user
-     * @return List of all users with the given last name
-     */
-    public List<User> findByLastName(String lastName);
 }
