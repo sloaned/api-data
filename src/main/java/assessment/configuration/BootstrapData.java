@@ -32,7 +32,7 @@ public class BootstrapData implements CommandLineRunner {
         User user = new User();
 
         user.setVersion(1);
-        user.setActive(true);
+        user.setIsActive(true);
         user.setAvatar("avatar");
         user.setEmail("test@test.com");
         user.setFirstName("testFirstName");
@@ -43,7 +43,7 @@ public class BootstrapData implements CommandLineRunner {
         User user2 = new User();
 
         user2.setVersion(1);
-        user2.setActive(true);
+        user2.setIsActive(true);
         user2.setAvatar("avatar2");
         user2.setEmail("test2@test.com");
         user2.setFirstName("testFirstNameTwo");
