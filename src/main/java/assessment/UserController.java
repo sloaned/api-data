@@ -30,8 +30,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users/import", method = RequestMethod.POST)
-    public void importUsers(@RequestBody List<User> users) {
+    public List<User> importUsers(@RequestBody List<User> users) {
         repo.deleteAll();
-        repo.save(users);
+        return repo.save(users);
     }
 }
