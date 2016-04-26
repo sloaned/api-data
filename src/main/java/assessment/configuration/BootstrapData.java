@@ -26,35 +26,7 @@ public class BootstrapData implements CommandLineRunner {
      */
     @Override
     public void run(String... args) throws Exception {
-        repository.deleteAll();
-        int initData = 25;
-
-        User user = new User();
-
-        user.setVersion(1);
-        user.setIsActive(true);
-        user.setAvatar("avatar");
-        user.setEmail("test@test.com");
-        user.setFirstName("testFirstName");
-        user.setLastName("testLastName");
-        user.setRole(Role.DEVELOPER);
-        user.setProfileDescription("Test description");
-
-        User user2 = new User();
-
-        user2.setVersion(1);
-        user2.setIsActive(true);
-        user2.setAvatar("avatar2");
-        user2.setEmail("test2@test.com");
-        user2.setFirstName("testFirstNameTwo");
-        user2.setLastName("testLastNameTwo");
-        user2.setRole(Role.DEVELOPER);
-        user2.setProfileDescription("Test description2");
-
-
-        repository.save(user);
-        repository.save(user2);
-
+        //fill this with dummy data, excluding users which are imported from Employee Services
     }
 
 }
