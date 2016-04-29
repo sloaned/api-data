@@ -16,7 +16,7 @@ import java.util.List;
  * do a delete all
  */
 @RestController
-public class UserController {
+public class ImportUsersController {
 
     @Autowired
     private UserRepository repo;
