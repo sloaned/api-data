@@ -2,7 +2,9 @@ package assessment;
 
 import assessment.configuration.BootstrapData;
 import assessment.entities.kudo.Kudo;
+import assessment.entities.team.Team;
 import assessment.modules.kudo.KudoRepository;
+import assessment.modules.team.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +22,9 @@ public class TestDataController {
     KudoRepository kudoRepo;
 
     @Autowired
+    TeamRepository teamRepo;
+
+    @Autowired
     BootstrapData bootStrapData;
 
     public void setKudoRepo(KudoRepository kudoRepo) {
@@ -31,8 +36,9 @@ public class TestDataController {
         boolean success = false;
 
         boolean kudoSuccess = insertKudoData();
+        boolean teamSuccess = insertTeamData();
 
-        if(kudoSuccess){
+        if(kudoSuccess && teamSuccess){
 
             success = true;
 
@@ -53,6 +59,20 @@ public class TestDataController {
 
         return success;
     }
+
+    private boolean insertTeamData(){
+        boolean success = true;
+
+        List<Team> teamList = bootStrapData.getTestTeams();
+        if(teamList.isEmpty()){
+            return false;
+        }
+
+        success = !teamRepo.save(bootStrapData.getTestTeams()).isEmpty();
+
+        return success;
+    }
+
 }
 
 

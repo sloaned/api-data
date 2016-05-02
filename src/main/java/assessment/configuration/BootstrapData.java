@@ -1,13 +1,15 @@
 package assessment.configuration;
 
 import assessment.entities.kudo.Kudo;
+import assessment.entities.membership.Membership;
+import assessment.entities.team.Team;
+import assessment.entities.team.TeamType;
 import assessment.entities.user.User;
+import assessment.modules.team.TeamRepository;
 import assessment.modules.user.UserRepository;
 import assessment.util.SeedDataConstants;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,8 +25,22 @@ public class BootstrapData{
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TeamRepository teamRepository;
+
     public void setUserRepository(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public User findUserInListByEmail(String emailToFind, List<User> userList){
+
+        for(int i = 0; i < userList.size(); i++){
+            User userToFind = userList.get(i);
+            if(userToFind.getEmail().equals(emailToFind)){
+                return userToFind;
+            }
+        }
+        return null;
     }
 
     public UserRepository getUserRepository() {
@@ -96,5 +112,81 @@ public class BootstrapData{
         kudoList.add(kudo20);
 
         return kudoList;
+    }
+
+    public List<Team> getTestTeams(){
+
+        List<User> userList = new ArrayList<>();
+        userList = userRepository.findAll();
+        List<Team> teamList = new ArrayList<>();
+        List<Membership> team1LeaderList = new ArrayList<>();
+        List<Membership> team1DevList = new ArrayList<>();
+
+        User hayes = findUserInListByEmail("hmccardell@catalystdevworks.com", userList);
+        Membership hayesMembership = new Membership(hayes.getId(), true, new Date(), null);
+        team1LeaderList.add(hayesMembership);
+
+        User andrew = findUserInListByEmail("arajigah@catalystdevworks.com", userList);
+        Membership andrewMembership = new Membership(andrew.getId(), true, new Date(), null);
+        team1DevList.add(andrewMembership);
+
+        User josh = findUserInListByEmail("jtucker@catalystdevworks.com", userList);
+        Membership joshMembership = new Membership(josh.getId(), true, new Date(), null);
+        team1DevList.add(joshMembership);
+
+        User jacobson = findUserInListByEmail("jjacobson@catalystdevworks.com", userList);
+        Membership jacobsonMembership = new Membership(jacobson.getId(), true, new Date(), null);
+        team1DevList.add(jacobsonMembership);
+
+        User marissa = findUserInListByEmail("mmosley@catalystdevworks.com", userList);
+        Membership marissaMembership = new Membership(marissa.getId(), true, new Date(), null);
+        team1DevList.add(marissaMembership);
+
+        User gokul = findUserInListByEmail("gcaushik@catalystdevworks.com", userList);
+        Membership gokulMembership = new Membership(gokul.getId(), true, new Date(), null);
+        team1DevList.add(gokulMembership);
+
+        User ben = findUserInListByEmail("bthomson@catalystdevworks.com", userList);
+        Membership benMembership = new Membership(ben.getId(), true, new Date(), null);
+        team1DevList.add(benMembership);
+
+        User adam = findUserInListByEmail("afields@catalystdevworks.com", userList);
+        Membership adamMembership = new Membership(adam.getId(), true, new Date(), null);
+        team1DevList.add(adamMembership);
+
+        User katy = findUserInListByEmail("klafrance@catalystdevworks.com", userList);
+        Membership katyMembership = new Membership(katy.getId(), true, new Date(), null);
+        team1DevList.add(katyMembership);
+
+        User brent = findUserInListByEmail("blotspeich@catalystdevworks.com", userList);
+        Membership brentMembership = new Membership(brent.getId(), false, new Date(), new Date());
+        team1DevList.add(brentMembership);
+
+        User greg = findUserInListByEmail("gfisher@catalystdevworks.com", userList);
+        Membership gregMembership = new Membership(greg.getId(), false, new Date(), new Date());
+        team1DevList.add(gregMembership);
+
+        User alysha = findUserInListByEmail("arecore@catalystdevworks.com", userList);
+        Membership alyshaMembership = new Membership(alysha.getId(), false, new Date(), new Date());
+        team1DevList.add(alyshaMembership);
+
+        User ken = findUserInListByEmail("kwheatt@catalystdevworks.com", userList);
+        Membership kenMembership = new Membership(ken.getId(), false, new Date(), new Date());
+        team1DevList.add(kenMembership);
+
+        Team team1 = new Team();
+
+        team1.setName("Hayes' Heroes");
+        team1.setActive(true);
+        team1.setDescription("A team of cycle 11 and 13 graduates dedicated to full stack awesomeness.");
+        team1.setTeamType(TeamType.DEV);
+        team1.setReviewFrequency(1);
+        team1.setVersion(1);
+        team1.setLeaderList(team1LeaderList);
+        team1.setUserList(team1DevList);
+
+        teamList.add(team1);
+
+        return teamList;
     }
 }
