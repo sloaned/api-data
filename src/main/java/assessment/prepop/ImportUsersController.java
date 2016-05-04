@@ -1,4 +1,4 @@
-package assessment;
+package assessment.prepop;
 
 import assessment.entities.user.User;
 import assessment.modules.user.UserRepository;

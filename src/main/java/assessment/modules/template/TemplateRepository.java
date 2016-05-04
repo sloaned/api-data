@@ -1,6 +1,6 @@
-package assessment.modules.assessment;
+package assessment.modules.template;
 
-import assessment.entities.assessment.Assessment;
+import assessment.entities.template.Template;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -9,9 +9,9 @@ import org.springframework.data.rest.core.annotation.RestResource;
  * Created by gfisher on 3/16/2016.
  */
 @RepositoryRestResource
-public interface AssessmentRepository extends MongoRepository<Assessment, String> {
+public interface TemplateRepository extends MongoRepository<Template, String> {
 
     @Override
     @RestResource(exported = false)
-    void delete(Assessment assessment);
+    void delete(Template assessment);
 }

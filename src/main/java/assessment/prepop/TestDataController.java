@@ -1,8 +1,13 @@
-package assessment;
+package assessment.prepop;
 
-import assessment.configuration.BootstrapData;
+import assessment.entities.period.Period;
+import assessment.modules.PeriodRepository;
+import assessment.modules.template.TemplateRepository;
+import assessment.prepop.BootstrapData;
 import assessment.entities.kudo.Kudo;
+import assessment.entities.team.Team;
 import assessment.modules.kudo.KudoRepository;
+import assessment.modules.team.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +25,15 @@ public class TestDataController {
     KudoRepository kudoRepo;
 
     @Autowired
+    TeamRepository teamRepo;
+
+    @Autowired
+    TemplateRepository templateRepo;
+
+    @Autowired
+    PeriodRepository periodRepo;
+
+    @Autowired
     BootstrapData bootStrapData;
 
     public void setKudoRepo(KudoRepository kudoRepo) {
@@ -31,8 +45,10 @@ public class TestDataController {
         boolean success = false;
 
         boolean kudoSuccess = insertKudoData();
+        boolean teamSuccess = insertTeamData();
+        boolean periodSuccess = insertPeriodData();
 
-        if(kudoSuccess){
+        if(kudoSuccess && teamSuccess){
 
             success = true;
 
@@ -53,6 +69,32 @@ public class TestDataController {
 
         return success;
     }
+
+    private boolean insertTeamData(){
+        boolean success = true;
+
+        List<Team> teamList = bootStrapData.getTestTeams();
+        if(teamList.isEmpty()){
+            return false;
+        }
+
+        success = !teamRepo.save(bootStrapData.getTestTeams()).isEmpty();
+
+        return success;
+    }
+
+    private boolean insertPeriodData(){
+        boolean success = true;
+
+        List<Period> perioodList = bootStrapData.getTestPeriods();
+        if(perioodList.isEmpty()){
+            return false;
+        }
+
+        success = !periodRepo.save(bootStrapData.getTestPeriods()).isEmpty();
+        return success;
+    }
+
 }
 
 
