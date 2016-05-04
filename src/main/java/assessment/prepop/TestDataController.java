@@ -1,6 +1,9 @@
-package assessment;
+package assessment.prepop;
 
-import assessment.configuration.BootstrapData;
+import assessment.entities.period.Period;
+import assessment.modules.PeriodRepository;
+import assessment.modules.template.TemplateRepository;
+import assessment.prepop.BootstrapData;
 import assessment.entities.kudo.Kudo;
 import assessment.entities.team.Team;
 import assessment.modules.kudo.KudoRepository;
@@ -25,6 +28,12 @@ public class TestDataController {
     TeamRepository teamRepo;
 
     @Autowired
+    TemplateRepository templateRepo;
+
+    @Autowired
+    PeriodRepository periodRepo;
+
+    @Autowired
     BootstrapData bootStrapData;
 
     public void setKudoRepo(KudoRepository kudoRepo) {
@@ -37,6 +46,7 @@ public class TestDataController {
 
         boolean kudoSuccess = insertKudoData();
         boolean teamSuccess = insertTeamData();
+        boolean periodSuccess = insertPeriodData();
 
         if(kudoSuccess && teamSuccess){
 
@@ -70,6 +80,18 @@ public class TestDataController {
 
         success = !teamRepo.save(bootStrapData.getTestTeams()).isEmpty();
 
+        return success;
+    }
+
+    private boolean insertPeriodData(){
+        boolean success = true;
+
+        List<Period> perioodList = bootStrapData.getTestPeriods();
+        if(perioodList.isEmpty()){
+            return false;
+        }
+
+        success = !periodRepo.save(bootStrapData.getTestPeriods()).isEmpty();
         return success;
     }
 

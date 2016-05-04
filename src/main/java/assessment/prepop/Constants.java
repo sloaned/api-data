@@ -1,4 +1,4 @@
-package assessment.util;
+package assessment.prepop;
 
 import assessment.entities.kudo.Kudo;
 
@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by hmccardell on 4/29/2016.
  */
-public class SeedDataConstants {
+public class Constants {
 
 
     public static final String KUDO_COMMENT_1 = "The real problem in speech is not precise language. The problem is clear language. The desire is to have the idea clearly communicated to the other person. It is only necessary to be precise when there is some doubt as to the meaning of a phrase, and then the precision should be put in the place where the doubt exists. It is really quite impossible to say anything with absolute precision, unless that thing is so abstracted from the real world as to not represent any real thing.";
