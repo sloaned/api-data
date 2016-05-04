@@ -63,38 +63,38 @@ public class BootstrapData{
         User user1 = userList.get(1);
         User user2 = userList.get(2);
 
-        Kudo kudo1 = new Kudo(1, user1.getId(), user2.getId(), Constants.KUDO_COMMENT_1, new Date());
-        Kudo kudo2 = new Kudo(1, user1.getId(), user2.getId(), Constants.KUDO_COMMENT_2, new Date());
-        Kudo kudo3 = new Kudo(1, user1.getId(), user2.getId(), Constants.KUDO_COMMENT_3, new Date());
-        Kudo kudo4 = new Kudo(1, user1.getId(), user2.getId(), Constants.KUDO_COMMENT_4, new Date());
-        Kudo kudo5 = new Kudo(1, user1.getId(), user2.getId(), Constants.KUDO_COMMENT_5, new Date());
+        Kudo kudo1 = new Kudo(user1.getId(), user2.getId(), Constants.KUDO_COMMENT_1, new Date());
+        Kudo kudo2 = new Kudo(user1.getId(), user2.getId(), Constants.KUDO_COMMENT_2, new Date());
+        Kudo kudo3 = new Kudo(user1.getId(), user2.getId(), Constants.KUDO_COMMENT_3, new Date());
+        Kudo kudo4 = new Kudo(user1.getId(), user2.getId(), Constants.KUDO_COMMENT_4, new Date());
+        Kudo kudo5 = new Kudo(user1.getId(), user2.getId(), Constants.KUDO_COMMENT_5, new Date());
 
         User user3 = userList.get(3);
         User user4 = userList.get(4);
 
-        Kudo kudo6 = new Kudo(1, user3.getId(), user4.getId(), Constants.KUDO_COMMENT_1, new Date());
-        Kudo kudo7 = new Kudo(1, user3.getId(), user4.getId(), Constants.KUDO_COMMENT_2, new Date());
-        Kudo kudo8 = new Kudo(1, user3.getId(), user4.getId(), Constants.KUDO_COMMENT_3, new Date());
-        Kudo kudo9 = new Kudo(1, user3.getId(), user4.getId(), Constants.KUDO_COMMENT_4, new Date());
-        Kudo kudo10 = new Kudo(1, user3.getId(), user4.getId(), Constants.KUDO_COMMENT_5, new Date());
+        Kudo kudo6 = new Kudo(user3.getId(), user4.getId(), Constants.KUDO_COMMENT_1, new Date());
+        Kudo kudo7 = new Kudo(user3.getId(), user4.getId(), Constants.KUDO_COMMENT_2, new Date());
+        Kudo kudo8 = new Kudo(user3.getId(), user4.getId(), Constants.KUDO_COMMENT_3, new Date());
+        Kudo kudo9 = new Kudo(user3.getId(), user4.getId(), Constants.KUDO_COMMENT_4, new Date());
+        Kudo kudo10 = new Kudo(user3.getId(), user4.getId(), Constants.KUDO_COMMENT_5, new Date());
 
         User user5 = userList.get(5);
         User user6 = userList.get(6);
 
-        Kudo kudo11 = new Kudo(1, user5.getId(), user6.getId(), Constants.KUDO_COMMENT_1, new Date());
-        Kudo kudo12 = new Kudo(1, user5.getId(), user6.getId(), Constants.KUDO_COMMENT_2, new Date());
-        Kudo kudo13 = new Kudo(1, user5.getId(), user6.getId(), Constants.KUDO_COMMENT_3, new Date());
-        Kudo kudo14 = new Kudo(1, user5.getId(), user6.getId(), Constants.KUDO_COMMENT_4, new Date());
-        Kudo kudo15 = new Kudo(1, user5.getId(), user6.getId(), Constants.KUDO_COMMENT_5, new Date());
+        Kudo kudo11 = new Kudo(user5.getId(), user6.getId(), Constants.KUDO_COMMENT_1, new Date());
+        Kudo kudo12 = new Kudo(user5.getId(), user6.getId(), Constants.KUDO_COMMENT_2, new Date());
+        Kudo kudo13 = new Kudo(user5.getId(), user6.getId(), Constants.KUDO_COMMENT_3, new Date());
+        Kudo kudo14 = new Kudo(user5.getId(), user6.getId(), Constants.KUDO_COMMENT_4, new Date());
+        Kudo kudo15 = new Kudo(user5.getId(), user6.getId(), Constants.KUDO_COMMENT_5, new Date());
 
         User user7 = userList.get(7);
         User user8 = userList.get(8);
 
-        Kudo kudo17 = new Kudo(1, user7.getId(), user8.getId(), Constants.KUDO_COMMENT_2, new Date());
-        Kudo kudo16 = new Kudo(1, user7.getId(), user8.getId(), Constants.KUDO_COMMENT_1, new Date());
-        Kudo kudo18 = new Kudo(1, user7.getId(), user8.getId(), Constants.KUDO_COMMENT_3, new Date());
-        Kudo kudo19 = new Kudo(1, user7.getId(), user8.getId(), Constants.KUDO_COMMENT_4, new Date());
-        Kudo kudo20 = new Kudo(1, user7.getId(), user8.getId(), Constants.KUDO_COMMENT_5, new Date());
+        Kudo kudo17 = new Kudo(user7.getId(), user8.getId(), Constants.KUDO_COMMENT_2, new Date());
+        Kudo kudo16 = new Kudo(user7.getId(), user8.getId(), Constants.KUDO_COMMENT_1, new Date());
+        Kudo kudo18 = new Kudo(user7.getId(), user8.getId(), Constants.KUDO_COMMENT_3, new Date());
+        Kudo kudo19 = new Kudo(user7.getId(), user8.getId(), Constants.KUDO_COMMENT_4, new Date());
+        Kudo kudo20 = new Kudo(user7.getId(), user8.getId(), Constants.KUDO_COMMENT_5, new Date());
 
         List<Kudo> kudoList = new ArrayList<>();
 
