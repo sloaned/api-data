@@ -1,17 +1,19 @@
-package assessment.modules.template;
+package assessment.repositories;
 
-import assessment.entities.template.Template;
+import assessment.entities.user.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 /**
- * Created by gfisher on 3/16/2016.
+ * Created by gfisher on 3/14/2016.
  */
 @RepositoryRestResource
-public interface TemplateRepository extends MongoRepository<Template, String> {
-
+public interface UserRepository extends MongoRepository<User, String> {
+    /**
+     * Prevents deletion of a user entity
+     */
     @Override
     @RestResource(exported = false)
-    void delete(Template assessment);
+    void delete(User user);
 }

@@ -1,4 +1,4 @@
-package assessment.prepop;
+package assessment.prepop.bootstrapping;
 
 import assessment.entities.kudo.Kudo;
 

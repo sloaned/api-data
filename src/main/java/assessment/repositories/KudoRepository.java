@@ -1,4 +1,4 @@
-package assessment.modules.kudo;
+package assessment.repositories;
 
 import assessment.entities.kudo.Kudo;
 import org.springframework.data.mongodb.repository.MongoRepository;

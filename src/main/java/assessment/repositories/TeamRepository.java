@@ -1,14 +1,17 @@
-package assessment.modules.review;
+package assessment.repositories;
 
-import assessment.entities.review.Review;
+import assessment.entities.team.Team;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+/**
+ * Created by gfisher on 3/16/2016.
+ */
 @RepositoryRestResource
-public interface ReviewRepository extends MongoRepository<Review, String> {
+public interface TeamRepository extends MongoRepository<Team,String> {
 
     @Override
     @RestResource(exported = false)
-    void delete(Review review);
+    void delete(Team team);
 }

@@ -1,7 +1,7 @@
-package assessment.prepop;
+package assessment.prepop.employeeimport;
 
 import assessment.entities.user.User;
-import assessment.modules.user.UserRepository;
+import assessment.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +29,7 @@ public class ImportUsersController {
         this.repo = repo;
     }
 
-    @RequestMapping(value = "/users/import", method = RequestMethod.POST)
+    @RequestMapping(value = "/users/employeeimport", method = RequestMethod.POST)
     public List<User> importUsers(@RequestBody List<User> users) {
         repo.deleteAll();
         return repo.save(users);

@@ -1,13 +1,12 @@
-package assessment.prepop;
+package assessment.prepop.bootstrapping;
 
 import assessment.entities.period.Period;
-import assessment.modules.PeriodRepository;
-import assessment.modules.template.TemplateRepository;
-import assessment.prepop.BootstrapData;
+import assessment.repositories.KudoRepository;
+import assessment.repositories.PeriodRepository;
+import assessment.repositories.TemplateRepository;
 import assessment.entities.kudo.Kudo;
 import assessment.entities.team.Team;
-import assessment.modules.kudo.KudoRepository;
-import assessment.modules.team.TeamRepository;
+import assessment.repositories.TeamRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,6 +42,10 @@ public class TestDataController {
     @RequestMapping(value = "/testDataInsert", method = RequestMethod.POST)
     public boolean insertTestData() {
         boolean success = false;
+
+        kudoRepo.deleteAll();
+        teamRepo.deleteAll();
+        periodRepo.deleteAll();
 
         boolean kudoSuccess = insertKudoData();
         boolean teamSuccess = insertTeamData();

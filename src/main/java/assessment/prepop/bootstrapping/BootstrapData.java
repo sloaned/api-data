@@ -1,4 +1,4 @@
-package assessment.prepop;
+package assessment.prepop.bootstrapping;
 
 import assessment.entities.kudo.Kudo;
 import assessment.entities.period.Period;
@@ -6,13 +6,11 @@ import assessment.entities.team.Member;
 import assessment.entities.team.Role;
 import assessment.entities.team.Team;
 import assessment.entities.user.User;
-import assessment.modules.PeriodRepository;
-import assessment.modules.team.TeamRepository;
-import assessment.modules.template.TemplateRepository;
-import assessment.modules.user.UserRepository;
+import assessment.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -36,8 +34,21 @@ public class BootstrapData{
     @Autowired
     private TemplateRepository templateRepository;
 
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    @Autowired
+    private KudoRepository kudoRepository;
+
+    @PostConstruct
+    public void dataInsertion(){
+
+        kudoRepository.deleteAll();
+        teamRepository.deleteAll();
+
+        List<Kudo> kudoList = getTestKudos();
+        kudoRepository.save(kudoList);
+
+        List<Team> teamList = getTestTeams();
+        teamRepository.save(teamList);
+
     }
 
     public User findUserInListByEmail(String emailToFind, List<User> userList){
@@ -49,10 +60,6 @@ public class BootstrapData{
             }
         }
         return null;
-    }
-
-    public UserRepository getUserRepository() {
-        return userRepository;
     }
 
     public List<Kudo> getTestKudos() {
@@ -126,6 +133,7 @@ public class BootstrapData{
 
         List<User> userList = new ArrayList<>();
         userList = userRepository.findAll();
+        System.out.println(findUserInListByEmail("hmccardell@catalystdevworks.com", userList).toString());
         List<Team> teamList = new ArrayList<>();
         List<Member> team1DevList = new ArrayList<>();
 

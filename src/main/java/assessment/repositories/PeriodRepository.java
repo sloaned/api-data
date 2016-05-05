@@ -1,4 +1,4 @@
-package assessment.modules;
+package assessment.repositories;
 
 import assessment.entities.period.Period;
 import org.springframework.data.mongodb.repository.MongoRepository;
