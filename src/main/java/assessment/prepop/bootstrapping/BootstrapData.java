@@ -7,7 +7,10 @@ import assessment.entities.team.Role;
 import assessment.entities.team.Team;
 import assessment.entities.user.User;
 import assessment.repositories.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -18,9 +21,12 @@ import java.util.List;
 /**
  * Created by hmccardell on 3/16/2016.
  */
-
 @Component
+@EnableConfigurationProperties(BootstrapDataProperties.class)
 public class BootstrapData{
+
+    @Autowired(required = false)
+    private BootstrapDataProperties properties;
 
     @Autowired
     private UserRepository userRepository;
@@ -37,17 +43,33 @@ public class BootstrapData{
     @Autowired
     private KudoRepository kudoRepository;
 
+    protected Logger logger = LogManager.getLogger(this.getClass());
+
     @PostConstruct
     public void dataInsertion(){
 
-        kudoRepository.deleteAll();
-        teamRepository.deleteAll();
 
-        List<Kudo> kudoList = getTestKudos();
-        kudoRepository.save(kudoList);
+        if (properties.getKudos()){
+            kudoRepository.deleteAll();
+            List<Kudo> kudoList = getTestKudos();
+            kudoRepository.save(kudoList);
+            logger.info("Kudos wiped and inserted");
+        }
+        else{
+            logger.info("Kudos false, no manipulation");
+        }
+        if (properties.getTeams()){
+            teamRepository.deleteAll();
+            List<Team> teamList = getTestTeams();
+            teamRepository.save(teamList);
+            logger.info("Teams wiped and inserted");
+        }
+        else{
+            logger.info("Teams false, no manipulation");
+        }
+        if (properties.getAssessments()){
 
-        List<Team> teamList = getTestTeams();
-        teamRepository.save(teamList);
+        }
 
     }
 
@@ -133,7 +155,6 @@ public class BootstrapData{
 
         List<User> userList = new ArrayList<>();
         userList = userRepository.findAll();
-        System.out.println(findUserInListByEmail("hmccardell@catalystdevworks.com", userList).toString());
         List<Team> teamList = new ArrayList<>();
         List<Member> team1DevList = new ArrayList<>();
 
@@ -192,7 +213,7 @@ public class BootstrapData{
         Team team1 = new Team();
 
         team1.setName("Hayes' Heroes");
-        team1.setActive(true);
+        team1.setIsActive(true);
         team1.setDescription("A team of cycle 11 and 13 graduates dedicated to full stack awesomeness.");
         team1.setVersion(1);
         team1.setMemberList(team1DevList);
