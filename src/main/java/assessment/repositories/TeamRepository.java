@@ -14,4 +14,6 @@ public interface TeamRepository extends MongoRepository<Team,String> {
     @Override
     @RestResource(exported = false)
     void delete(Team team);
+
+    Team findByName(String name);
 }

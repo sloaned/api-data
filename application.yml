@@ -1,3 +1,7 @@
 bootstrapping: #delete or set to false if you don't want a fresh import from the employee services
   kudos: true
   teams: true
+  questions: true
+  templates: true
+  periods: true
+  reviews: true
