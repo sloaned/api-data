@@ -369,7 +369,7 @@ public class BootstrapData{
         Template competencyTemplate = findTemplateInListByName("Core Competencies", templateList);
         Team team1 = teamRepository.findByName("Hayes' Heroes");
 
-        period1.setTemplate(competencyTemplate);
+        period1.setTemplateId(competencyTemplate.getId());
         period1.setName("Why are we naming periods");
         period1.setTeamId(team1.getId());
         period1.setSeriesNumber(1);
@@ -479,66 +479,66 @@ public class BootstrapData{
 
         Date reviewDate = new Date(System.currentTimeMillis() + 60000);
 
-        Review review_hayes1 = new Review(hayes, andrew, reviewDate, greatFeedbackList, 4.0);
-        Review review_hayes2 = new Review(hayes, josh, reviewDate, greatFeedbackList, 4.0);
-        Review review_hayes3 = new Review(hayes, jacobson, reviewDate, greatFeedbackList, 4.0);
-        Review review_hayes4 = new Review(hayes, ben, reviewDate, greatFeedbackList, 4.0);
-        Review review_hayes5 = new Review(hayes, gokul, reviewDate, greatFeedbackList, 4.0);
-        Review review_hayes6 = new Review(hayes, marissa, reviewDate, greatFeedbackList, 4.0);
+        Review review_hayes1 = new Review(hayes.getId(), andrew.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_hayes2 = new Review(hayes.getId(), josh.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_hayes3 = new Review(hayes.getId(), jacobson.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_hayes4 = new Review(hayes.getId(), ben.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_hayes5 = new Review(hayes.getId(), gokul.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_hayes6 = new Review(hayes.getId(), marissa.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_andrew1 = new Review(andrew, hayes, reviewDate, greatFeedbackList, 4.0);
-        Review review_andrew2 = new Review(andrew, josh, reviewDate, greatFeedbackList, 4.0);
-        Review review_andrew3 = new Review(andrew, jacobson, reviewDate, greatFeedbackList, 4.0);
-        Review review_andrew4 = new Review(andrew, ben, reviewDate, greatFeedbackList, 4.0);
-        Review review_andrew5 = new Review(andrew, gokul, reviewDate, greatFeedbackList, 4.0);
-        Review review_andrew6 = new Review(andrew, marissa, reviewDate, greatFeedbackList, 4.0);
+        Review review_andrew1 = new Review(andrew.getId(), hayes.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_andrew2 = new Review(andrew.getId(), josh.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_andrew3 = new Review(andrew.getId(), jacobson.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_andrew4 = new Review(andrew.getId(), ben.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_andrew5 = new Review(andrew.getId(), gokul.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_andrew6 = new Review(andrew.getId(), marissa.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_josh1 = new Review(josh, andrew, reviewDate, greatFeedbackList, 4.0);
-        Review review_josh2 = new Review(josh, hayes, reviewDate, greatFeedbackList, 4.0);
-        Review review_josh3 = new Review(josh, jacobson, reviewDate, greatFeedbackList, 4.0);
-        Review review_josh4 = new Review(josh, ben, reviewDate, greatFeedbackList, 4.0);
-        Review review_josh5 = new Review(josh, gokul, reviewDate, greatFeedbackList, 4.0);
-        Review review_josh6 = new Review(josh, marissa, reviewDate, greatFeedbackList, 4.0);
+        Review review_josh1 = new Review(josh.getId(), andrew.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_josh2 = new Review(josh.getId(), hayes.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_josh3 = new Review(josh.getId(), jacobson.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_josh4 = new Review(josh.getId(), ben.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_josh5 = new Review(josh.getId(), gokul.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_josh6 = new Review(josh.getId(), marissa.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_jacobson1 = new Review(jacobson, andrew, reviewDate, greatFeedbackList, 4.0);
-        Review review_jacobson2 = new Review(jacobson, josh, reviewDate, greatFeedbackList, 4.0);
-        Review review_jacobson3 = new Review(jacobson, hayes, reviewDate, greatFeedbackList, 4.0);
-        Review review_jacobson4 = new Review(jacobson, ben, reviewDate, greatFeedbackList, 4.0);
-        Review review_jacobson5 = new Review(jacobson, gokul, reviewDate, greatFeedbackList, 4.0);
-        Review review_jacobson6 = new Review(jacobson, marissa, reviewDate, greatFeedbackList, 4.0);
+        Review review_jacobson1 = new Review(jacobson.getId(), andrew.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_jacobson2 = new Review(jacobson.getId(), josh.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_jacobson3 = new Review(jacobson.getId(), hayes.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_jacobson4 = new Review(jacobson.getId(), ben.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_jacobson5 = new Review(jacobson.getId(), gokul.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_jacobson6 = new Review(jacobson.getId(), marissa.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_ben1 = new Review(ben, andrew, reviewDate, greatFeedbackList, 4.0);
-        Review review_ben2 = new Review(ben, josh, reviewDate, greatFeedbackList, 4.0);
-        Review review_ben3 = new Review(ben, jacobson, reviewDate, greatFeedbackList, 4.0);
-        Review review_ben4 = new Review(ben, hayes, reviewDate, greatFeedbackList, 4.0);
-        Review review_ben5 = new Review(ben, gokul, reviewDate, greatFeedbackList, 4.0);
-        Review review_ben6 = new Review(ben, marissa, reviewDate, greatFeedbackList, 4.0);
+        Review review_ben1 = new Review(ben.getId(), andrew.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_ben2 = new Review(ben.getId(), josh.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_ben3 = new Review(ben.getId(), jacobson.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_ben4 = new Review(ben.getId(), hayes.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_ben5 = new Review(ben.getId(), gokul.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_ben6 = new Review(ben.getId(), marissa.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_gokul1 = new Review(gokul, andrew, reviewDate, greatFeedbackList, 4.0);
-        Review review_gokul2 = new Review(gokul, josh, reviewDate, greatFeedbackList, 4.0);
-        Review review_gokul3 = new Review(gokul, jacobson, reviewDate, greatFeedbackList, 4.0);
-        Review review_gokul4 = new Review(gokul, ben, reviewDate, greatFeedbackList, 4.0);
-        Review review_gokul5 = new Review(gokul, hayes, reviewDate, greatFeedbackList, 4.0);
-        Review review_gokul6 = new Review(gokul, marissa, reviewDate, greatFeedbackList, 4.0);
+        Review review_gokul1 = new Review(gokul.getId(), andrew.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_gokul2 = new Review(gokul.getId(), josh.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_gokul3 = new Review(gokul.getId(), jacobson.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_gokul4 = new Review(gokul.getId(), ben.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_gokul5 = new Review(gokul.getId(), hayes.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_gokul6 = new Review(gokul.getId(), marissa.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_marissa1 = new Review(marissa, andrew, reviewDate, greatFeedbackList, 4.0);
-        Review review_marissa2 = new Review(marissa, josh, reviewDate, greatFeedbackList, 4.0);
-        Review review_marissa3 = new Review(marissa, jacobson, reviewDate, greatFeedbackList, 4.0);
-        Review review_marissa4 = new Review(marissa, ben, reviewDate, greatFeedbackList, 4.0);
-        Review review_marissa5 = new Review(marissa, gokul, reviewDate, greatFeedbackList, 4.0);
-        Review review_marissa6 = new Review(marissa, hayes, reviewDate, greatFeedbackList, 4.0);
+        Review review_marissa1 = new Review(marissa.getId(), andrew.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_marissa2 = new Review(marissa.getId(), josh.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_marissa3 = new Review(marissa.getId(), jacobson.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_marissa4 = new Review(marissa.getId(), ben.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_marissa5 = new Review(marissa.getId(), gokul.getId(), reviewDate, greatFeedbackList, 4.0);
+        Review review_marissa6 = new Review(marissa.getId(), hayes.getId(), reviewDate, greatFeedbackList, 4.0);
 
-        Review review_dan1 = new Review(dan, cole, reviewDate, greatFeedbackList, 2.0);
-        Review review_cole1 = new Review(cole, dan, reviewDate, badFeedbackList, 2.0);
+        Review review_dan1 = new Review(dan.getId(), cole.getId(), reviewDate, greatFeedbackList, 2.0);
+        Review review_cole1 = new Review(cole.getId(), dan.getId(), reviewDate, badFeedbackList, 2.0);
 
-        Review review_jules1 = new Review(jules, jake, reviewDate, badFeedbackList, 2.0);
-        Review review_jules2 = new Review(jules, sloane, reviewDate, badFeedbackList, 2.0);
+        Review review_jules1 = new Review(jules.getId(), jake.getId(), reviewDate, badFeedbackList, 2.0);
+        Review review_jules2 = new Review(jules.getId(), sloane.getId(), reviewDate, badFeedbackList, 2.0);
 
-        Review review_jake1 = new Review(jake, jules, reviewDate, badFeedbackList, 2.0);
-        Review review_jake2 = new Review(jake, sloane, reviewDate, badFeedbackList, 2.0);
+        Review review_jake1 = new Review(jake.getId(), jules.getId(), reviewDate, badFeedbackList, 2.0);
+        Review review_jake2 = new Review(jake.getId(), sloane.getId(), reviewDate, badFeedbackList, 2.0);
 
-        Review review_sloane1 = new Review(sloane, jules, reviewDate, badFeedbackList, 2.0);
-        Review review_sloane2 = new Review(sloane, jake, reviewDate, badFeedbackList, 2.0);
+        Review review_sloane1 = new Review(sloane.getId(), jules.getId(), reviewDate, badFeedbackList, 2.0);
+        Review review_sloane2 = new Review(sloane.getId(), jake.getId(), reviewDate, badFeedbackList, 2.0);
 
         reviewList.add(review_dan1);
         reviewList.add(review_cole1);
