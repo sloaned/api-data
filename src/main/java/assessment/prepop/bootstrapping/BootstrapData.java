@@ -67,6 +67,11 @@ public class BootstrapData{
     @PostConstruct
     public void dataInsertion(){
 
+        if(getUserList().isEmpty()){
+            logger.error("No users found, testing data not inserted.");
+            return;
+        }
+
         if (properties.getKudos()){
             kudoRepository.deleteAll();
             List<Kudo> kudoList = getTestKudos();
