@@ -11,6 +11,7 @@ import assessment.entities.team.Role;
 import assessment.entities.team.Team;
 import assessment.entities.template.Template;
 import assessment.entities.user.User;
+import assessment.factories.user.UserFactory;
 import assessment.repositories.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -53,6 +54,8 @@ public class BootstrapData{
 
     @Autowired
     private ReviewRepository reviewRepository;
+
+    UserFactory userFactory = new UserFactory();
 
     List<User> userList;
 
@@ -375,7 +378,6 @@ public class BootstrapData{
         Team team1 = teamRepository.findByName("Hayes' Heroes");
 
         period1.setTemplateId(competencyTemplate.getId());
-        period1.setName("Why are we naming periods");
         period1.setTeamId(team1.getId());
         period1.setSeriesNumber(1);
         period1.setDateTriggered((new Date()));
@@ -393,7 +395,7 @@ public class BootstrapData{
      */
     public List<Template> getTestTemplates(){
         List<Question> questionList = getTestQuestions();
-        Template template1 = new Template("Core Competencies", questionList);
+        Template template1 = new Template("Core Competencies", questionList, null);
 
         List<Template> templateList = new ArrayList<>();
         templateList.add(template1);
@@ -609,4 +611,12 @@ public class BootstrapData{
         return reviewList;
     }
 
+    public List<Review> massiveReviewBuilder(){
+        List reviewList = new ArrayList<>();
+
+
+
+
+        return reviewList;
+    }
 }

@@ -59,9 +59,14 @@
         <dependency>
             <groupId>com.catalystdevworks</groupId>
             <artifactId>aperture-entities</artifactId>
-            <version>0.1.8</version>
+            <version>0.1.9</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.catalystdevworks</groupId>
+            <artifactId>aperture-entities</artifactId>
+            <type>test-jar</type>
+            <version>0.1.9</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -99,13 +104,6 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-
     </dependencies>
 
 
