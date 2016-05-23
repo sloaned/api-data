@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 /**
  * Created by hmccardell on 4/29/2016.
  */
-@RepositoryRestResource(path ="/kudos")
+@RepositoryRestResource(path ="/kudos", collectionResourceRel = "kudos")
 public interface KudoRepository extends MongoRepository<Kudo,String> {
 
     @Override
