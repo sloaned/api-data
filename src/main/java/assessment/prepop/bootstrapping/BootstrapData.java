@@ -60,7 +60,7 @@ public class BootstrapData{
     List<User> userList;
 
     protected Logger logger = LogManager.getLogger(this.getClass());
-
+    
     /**
      * Void method for saving the test data to the database.  Other methods in this class
      * return lists which are persisted here.  This method checks the BootstrapData properties
