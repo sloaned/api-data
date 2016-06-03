@@ -352,6 +352,10 @@ public class BootstrapData{
         Member sloaneMember = new Member(sloane.getId(), true, new Date(), null, Role.DEVELOPER);
         team3DevList.add(sloaneMember);
 
+        User hutchcraft = findUserInListByEmail("khutchcraft@catalystdevworks.com", userList);
+        Member hutchMember = new Member(hutchcraft.getId(), true, new Date(), null, Role.MENTOR);
+        team3DevList.add(hutchMember);
+
         Team team3 = new Team();
         team3.setName("ATA Mobile");
         team3.setIsActive(true);
@@ -360,9 +364,48 @@ public class BootstrapData{
         team3.setMemberList(team3DevList);
         team3.setSummaryScore(4.0);
 
+        List<Member> team4DevList = new ArrayList<>();
+
+        User cooper = findUserInListByEmail("gcooper@catalystdevworks.com", userList);
+        Member cooperMember = new Member(cooper.getId(), true, new Date(), null, Role.DEVELOPER);
+        team4DevList.add(cooperMember);
+
+        User holewa = findUserInListByEmail("jholewa@catalystdevworks.com", userList);
+        Member holewaMember = new Member(holewa.getId(), true, new Date(), null, Role.DEVELOPER);
+        team4DevList.add(holewaMember);
+
+        User kcoomes = findUserInListByEmail("kcoomes@catalystdevworks.com", userList);
+        Member kcoomesMember = new Member(kcoomes.getId(), true, new Date(), null, Role.DEVELOPER);
+        team4DevList.add(kcoomesMember);
+
+        User urbaniak = findUserInListByEmail("purbaniak@catalystdevworks.com", userList);
+        Member urbaniakMember = new Member(urbaniak.getId(), true, new Date(), null, Role.DEVELOPER);
+        team4DevList.add(urbaniakMember);
+
+        User rkim = findUserInListByEmail("rkim@catalystdevworks.com", userList);
+        Member rkimMember = new Member(rkim.getId(), true, new Date(), null, Role.DEVELOPER);
+        team4DevList.add(rkimMember);
+
+        User moss = findUserInListByEmail("smoss@catalystdevworks.com", userList);
+        Member mossMember = new Member(moss.getId(), true, new Date(), null, Role.LEAD);
+        team4DevList.add(mossMember);
+
+        Team team4 = new Team();
+        team4.setName("TMI - Talent Management App");
+        team4.setIsActive(true);
+        team4.setDescription("They have talent.");
+        team4.setVersion(1);
+        team4.setMemberList(team4DevList);
+        team4.setSummaryScore(4.0);
+
+
+
+
+
         teamList.add(team1);
         teamList.add(team2);
         teamList.add(team3);
+        teamList.add(team4);
 
         return teamList;
     }
